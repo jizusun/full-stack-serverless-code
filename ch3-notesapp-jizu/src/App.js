@@ -9,6 +9,7 @@ import {
   deleteNote as DeleteNote,
   updateNote as UpdateNote,
 } from './graphql/mutations';
+import { onCreateNote } from './graphql/subscriptions';
 import { v4 as uuid } from 'uuid';
 
 const CLIENT_ID = uuid();
@@ -155,6 +156,16 @@ function App() {
 
   useEffect(() => {
     fetchNotes();
+    const subscription = API.graphql({
+      query: onCreateNote,
+    }).subscribe({
+      next: (notesData) => {
+        const note = notesData.value.data.onCreateNote;
+        if (CLIENT_ID === note.clientId) return;
+        dispatch({ type: 'ADD_NOTE', note });
+      },
+    });
+    return () => subscription.unsubscribe();
   }, []);
 
   return (
