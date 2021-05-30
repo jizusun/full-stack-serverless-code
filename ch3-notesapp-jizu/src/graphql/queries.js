@@ -14,13 +14,13 @@ export const getNotes = /* GraphQL */ `
     }
   }
 `;
-export const listNotess = /* GraphQL */ `
-  query ListNotess(
+export const listNotes = /* GraphQL */ `
+  query listNotes(
     $filter: ModelNotesFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listNotess(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         clientId
