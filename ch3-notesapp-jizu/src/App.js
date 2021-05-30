@@ -23,7 +23,7 @@ const styles = {
 function reducer(state, action) {
   switch (action.type) {
     case 'SET_NOTES':
-      return { ...state, notes: action.notes };
+      return { ...state, notes: action.notes, loading: false };
     case 'ERROR':
       return { ...state, loading: false, error: true };
     default:
@@ -39,7 +39,7 @@ function App() {
       const notesData = await API.graphql({
         query: listNotes,
       });
-      dispatch({ type: 'STE_NOTES', notes: notesData.data.listNotes.items });
+      dispatch({ type: 'SET_NOTES', notes: notesData.data.listNotes.items });
     } catch (err) {
       console.log('error: ', err);
       dispatch({ type: 'ERROR' });
@@ -55,7 +55,6 @@ function App() {
   }
 
   useEffect(() => {
-    debugger;
     fetchNotes();
   }, []);
 
