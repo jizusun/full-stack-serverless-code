@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "jizufirstamplify86e26cda": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
