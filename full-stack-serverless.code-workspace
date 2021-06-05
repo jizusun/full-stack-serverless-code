@@ -2,12 +2,16 @@
 	"folders": [
 		{
 			"name": "root",
-			"path": ".."
+			"path": "."
 		},
 		{
 			"name": "ch4-basic-auth",
-			"path": "../ch4-basic-auth-jizu"
+			"path": "./ch4-basic-auth-jizu"
 		},
+		{
+			"name": "ch5-custom-auth",
+			"path": "./ch5-custom-auth"
+		}
 	],
 	"settings": {
 		"files.autoSave": "onFocusChange",

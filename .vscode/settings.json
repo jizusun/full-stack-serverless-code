@@ -1,8 +1,8 @@
 {
-    "editor.formatOnSave": false,
-    "files.autoSave": "onFocusChange",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "eslint.validate": ["javascript"]
+    // "editor.formatOnSave": false,
+    // "files.autoSave": "onFocusChange",
+    // "editor.codeActionsOnSave": {
+    //     "source.fixAll.eslint": true
+    // },
+    // "eslint.validate": ["javascript"]
 }
