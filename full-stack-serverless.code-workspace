@@ -11,6 +11,10 @@
 		{
 			"name": "ch5-custom-auth",
 			"path": "./ch5-custom-auth"
+		},
+		{
+			"name": "mini-vod-system",
+			"path": "./mini-vod-system"
 		}
 	],
 	"settings": {
