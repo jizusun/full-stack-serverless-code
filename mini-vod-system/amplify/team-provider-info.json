@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-minivodsystem-dev-172336-authRole",
+      "UnauthRoleArn": "arn:aws:iam::775456991785:role/amplify-minivodsystem-dev-172336-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::775456991785:role/amplify-minivodsystem-dev-172336-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-minivodsystem-dev-172336-deployment",
+      "UnauthRoleName": "amplify-minivodsystem-dev-172336-unauthRole",
+      "StackName": "amplify-minivodsystem-dev-172336",
+      "StackId": "arn:aws:cloudformation:us-east-1:775456991785:stack/amplify-minivodsystem-dev-172336/e43e5df0-c6a8-11eb-9e97-0afe492705d7",
+      "AmplifyAppId": "d28pj2ke3f6g9x"
+    }
+  }
+}
