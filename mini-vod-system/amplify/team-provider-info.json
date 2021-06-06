@@ -10,6 +10,11 @@
       "StackName": "amplify-minivodsystem-dev-172336",
       "StackId": "arn:aws:cloudformation:us-east-1:775456991785:stack/amplify-minivodsystem-dev-172336/e43e5df0-c6a8-11eb-9e97-0afe492705d7",
       "AmplifyAppId": "d28pj2ke3f6g9x"
+    },
+    "categories": {
+      "auth": {
+        "minivodsystem79f34e61": {}
+      }
     }
   }
 }

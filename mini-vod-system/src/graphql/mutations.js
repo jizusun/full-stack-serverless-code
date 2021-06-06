@@ -9,7 +9,8 @@ export const createVideo = /* GraphQL */ `
     createVideo(input: $input, condition: $condition) {
       id
       name
-      url
+      video_url
+      thumbnail_url
       description
       likes
       createdAt
@@ -25,7 +26,8 @@ export const updateVideo = /* GraphQL */ `
     updateVideo(input: $input, condition: $condition) {
       id
       name
-      url
+      video_url
+      thumbnail_url
       description
       likes
       createdAt
@@ -41,7 +43,8 @@ export const deleteVideo = /* GraphQL */ `
     deleteVideo(input: $input, condition: $condition) {
       id
       name
-      url
+      video_url
+      thumbnail_url
       description
       likes
       createdAt

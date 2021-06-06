@@ -6,7 +6,8 @@ export const onCreateVideo = /* GraphQL */ `
     onCreateVideo {
       id
       name
-      url
+      video_url
+      thumbnail_url
       description
       likes
       createdAt
@@ -19,7 +20,8 @@ export const onUpdateVideo = /* GraphQL */ `
     onUpdateVideo {
       id
       name
-      url
+      video_url
+      thumbnail_url
       description
       likes
       createdAt
@@ -32,7 +34,8 @@ export const onDeleteVideo = /* GraphQL */ `
     onDeleteVideo {
       id
       name
-      url
+      video_url
+      thumbnail_url
       description
       likes
       createdAt

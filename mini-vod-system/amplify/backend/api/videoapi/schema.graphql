@@ -1,7 +1,7 @@
 type Video @model {
   id: ID!
   name: String!
-  video_url: String!
+  video_url: String
   thumbnail_url: String
   description: String
   likes: Int

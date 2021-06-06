@@ -6,7 +6,8 @@ export const getVideo = /* GraphQL */ `
     getVideo(id: $id) {
       id
       name
-      url
+      video_url
+      thumbnail_url
       description
       likes
       createdAt
@@ -24,7 +25,8 @@ export const listVideos = /* GraphQL */ `
       items {
         id
         name
-        url
+        video_url
+        thumbnail_url
         description
         likes
         createdAt
