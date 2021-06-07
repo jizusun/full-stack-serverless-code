@@ -4,5 +4,6 @@ type Video @model {
   video_url: String
   thumbnail_url: String
   description: String
+  content_type: 
   likes: Int
 }

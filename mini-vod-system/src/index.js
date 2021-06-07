@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Router from './Router';
 import reportWebVitals from './reportWebVitals';
-import { Amplify } from "aws-amplify";
-import config from './aws-exports'
-Amplify.configure(config)
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router/>
+    <Router />
   </React.StrictMode>,
   document.getElementById('root')
 );

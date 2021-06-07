@@ -10,6 +10,13 @@ import {
   updateVideo as UpdateVideo,
 } from './graphql/mutations';
 
+const styles = {
+  container: { padding: 20 },
+  input: { marginBottom: 10 },
+  item: { textAlign: 'Left' },
+  p: { color: '#1890ff' },
+};
+
 const initialState = {
   videos: [],
   loading: true,
@@ -58,10 +65,11 @@ const Video = (props) => {
     // setVideo(signedFiles);
   }
 
-  async function createVideo(videoName, url) {
+  async function createVideo(videoName, url, contentType, key) {
     const video = {
       name: videoName,
       video_url: url,
+      id: key,
     };
     dispatch({ type: 'ADD_VIDEO', video });
     try {
@@ -75,26 +83,56 @@ const Video = (props) => {
     }
   }
 
+  async function deleteVideo({ id }) {
+    const index = state.videos.findIndex((n) => n.id === id);
+    const videos = [
+      ...state.videos.slice(0, index),
+      ...state.videos.slice(index + 1),
+    ];
+    dispatch({ type: 'SET_VIDEOS', videos });
+    try {
+      await API.graphql({
+        query: DeleteVideo,
+        variables: { input: { id } },
+      });
+      console.log('successfully deleted video!');
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   async function onChange(e) {
     const file = e.target.files[0];
     const filetype = file.name.split('.')[file.name.split.length - 1];
+    const contentType = file.type;
     const videoName = file.name.substring(
       0,
       file.name.lastIndexOf('.')
     );
     const { key } = await Storage.put(`${uuid()}.${filetype}`, file, {
+      contentType: contentType,
       progressCallback(progress) {
         console.log(`Uploaded: ${progress.loaded}/${progress.total}`);
       },
     });
     const signedFile = await Storage.get(key);
-    createVideo(videoName, signedFile);
+    createVideo(videoName, signedFile, contentType, key);
   }
 
   const renderItem = (item) => {
     return (
       <List.Item
-        actions={[<p>Delete</p>]}
+        key={item.id}
+        actions={[
+          <button
+            style={styles.p}
+            onClick={() => {
+              deleteVideo(item);
+            }}
+          >
+            Delete
+          </button>,
+        ]}
         // extra={}
       >
         <List.Item.Meta
